@@ -46,4 +46,10 @@ class BookAPIView(APIView):
         return custom400("Failed to create book",serializer.errors)
     
     
-# changes didn't had
+from django.http import JsonResponse
+from django.contrib.auth.models import User
+
+def internal_user_count(request):
+    """Secure endpoint used by the sidecar server to check DB stats."""
+    count = User.objects.count()
+    return JsonResponse({"count": count})

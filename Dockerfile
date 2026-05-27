@@ -9,3 +9,4 @@ WORKDIR /testApp
 COPY . /testApp/
 
 RUN pip install -r requirements.txt
+
