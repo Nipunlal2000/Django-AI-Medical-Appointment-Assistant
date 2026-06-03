@@ -25,11 +25,11 @@ intent_collection = chroma_client.get_or_create_collection(name="intent_collecti
 memory_collection = chroma_client.get_or_create_collection(name="conversation_memory")
 
 DB_CONFIG = {
-    "user": "postgres",
-    "password": "7204",
-    "database": "test_db",
-    "host": "localhost",
-    "port": 5432
+    "user": settings.DATABASES["default"]["USER"],
+    "password": settings.DATABASES["default"]["PASSWORD"],
+    "database": settings.DATABASES["default"]["NAME"],
+    "host": settings.DATABASES["default"]["HOST"],
+    "port": settings.DATABASES["default"]["PORT"],
 }
 
 # --- HELPER FUNCTIONS ---
